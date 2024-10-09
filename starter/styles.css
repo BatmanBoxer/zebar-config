@@ -1,0 +1,135 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/assets/css/webfont.css.
+ */
+ @import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+ i {
+   color: rgba(255, 127, 80, 0.95); /* Coral color */
+   margin-right: 7px;
+   font-size: 16px; /* Adjust font size for better visibility */
+ }
+ 
+ body {
+   color: rgba(255, 255, 255, 0.9); /* White text */
+   font-family: ui-monospace, monospace;
+   font-size: 12px;
+   overflow: hidden;
+   background: linear-gradient(135deg, rgba(0, 51, 51, 0.9) 0%, rgba(0, 76, 76, 0.85) 100%); /* Dark cyan background */
+ }
+ 
+ html,
+ body,
+ #root {
+   height: 100%;
+   margin: 0;
+ }
+ 
+ #root {
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px); /* Add a backdrop blur effect */
+ }
+ 
+ .app {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   height: 100%;
+   padding: 0 1.5vw; /* Adjusted padding */
+ }
+ 
+ .left,
+ .center,
+ .right {
+   display: flex;
+   align-items: center;
+ }
+ 
+ .center {
+   justify-self: center;
+ }
+ 
+ .right {
+   justify-self: end;
+ }
+ 
+ .logo,
+ .binding-mode,
+ .tiling-direction,
+ .network,
+ .memory,
+ .cpu,
+ .battery {
+   margin-right: 20px;
+ }
+ 
+ .workspaces {
+   display: flex;
+   align-items: center;
+   height: 30px; /* Set height for the container */
+ }
+ 
+ .workspace {
+   height: 30px; /* Set height to 30px */
+   background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+   margin-right: 4px;
+   padding: 0 8px; /* Adjusted padding for vertical alignment */
+   color: rgba(255, 255, 255, 0.9); /* White text */
+   border: none;
+   border-radius: 5px; /* Slightly more rounded corners */
+   cursor: pointer;
+   display: flex; /* Flex display to center content */
+   justify-content: center; /* Center content horizontally */
+   align-items: center; /* Center content vertically */
+   transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+ 
+   &.displayed {
+     background: rgba(255, 255, 255, 0.2); /* Brighter on display */
+   }
+ 
+   &.focused,
+   &:hover {
+     background: rgba(255, 127, 80, 0.5); /* Coral background on hover */
+     transform: scale(1.05); /* Slightly enlarge on hover */
+   }
+ }
+ 
+ .binding-mode,
+ .tiling-direction {
+   height: 30px; /* Set height to 30px */
+   background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+   color: rgba(255, 255, 255, 0.9); /* White text */
+   border-radius: 5px; /* Slightly more rounded corners */
+   line-height: 1; /* Reset line height */
+   padding: 0 8px; /* Adjusted padding for vertical alignment */
+   border: 0;
+   cursor: pointer;
+   display: flex; /* Flex display to center content */
+   justify-content: center; /* Center content horizontally */
+   align-items: center; /* Center content vertically */
+   transition: background 0.3s ease;
+ 
+   &:hover {
+     background: rgba(255, 127, 80, 0.3); /* Lighter coral on hover */
+   }
+ }
+ 
+ .binding-mode {
+   margin-right: 4px;
+ }
+ 
+ .cpu .high-usage {
+   color: #900029; /* Keep this as it is for high-usage indication */
+ }
+ 
+ .battery {
+   position: relative;
+ }
+ 
+ .battery .charging-icon {
+   position: absolute;
+   font-size: 7px;
+   left: -8px;
+   top: 3px;
+ }
+ 
